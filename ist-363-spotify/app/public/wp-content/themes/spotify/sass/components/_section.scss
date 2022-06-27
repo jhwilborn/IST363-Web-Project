@@ -1,0 +1,17 @@
+@use '../abstracts/vars';
+.section{
+    // background-color: lightcyan;
+    padding: 1 0;
+/*     &.white{
+        background-color: white;
+    }
+    &.primary{
+        background-color:vars.$color_primary;
+    }
+    &.black{
+        background-color: black;
+    }
+    &.grey{
+        background-color:grey;
+    } */
+}

@@ -1,0 +1,14 @@
+@use "../sass/abstracts/mixins.scss";
+
+.section {
+	padding-block: 1rem;
+	@include mixins.breakpoint(tablet) {
+		padding-block: 1.25rem;
+	}
+	@include mixins.breakpoint(laptop) {
+		padding-block: 1.5rem;
+	}
+	@include mixins.breakpoint(desktop) {
+		padding-block: 2rem;
+	}
+}

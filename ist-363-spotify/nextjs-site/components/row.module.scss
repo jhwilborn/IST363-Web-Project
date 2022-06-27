@@ -1,0 +1,23 @@
+$justifyContentValues: flex-start, flex-end, center, space-between, space-around, space-evenly;
+$alignItemsValues: flex-start, flex-end, center, stretch, baseline;
+
+.row {
+    //background-color: rgb(40, 73, 73);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;//pushing too far to the edge of the screen
+    
+    @each $value in $justifyContentValues{
+    	&.justify-content-#{$value}{
+    		justify-content: $value;
+    	}
+    }
+     @each $value in $alignItemsValues{
+    	&.align-items-#{$value}{
+    		align-items: $value;
+    	}
+    }
+    &.nowrap{
+        flex-wrap:nowrap;
+    }
+}

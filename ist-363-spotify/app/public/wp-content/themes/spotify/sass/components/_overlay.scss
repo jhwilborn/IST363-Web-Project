@@ -1,0 +1,18 @@
+.overlay{
+    background-color: #000;
+    color:#fff;
+    width:100vw; //100%viewport width
+    height:100vw;
+    position:fixed; //does not scroll, completely obstructive, absolute positions within a parent relatively
+    top:0;
+    left:-100vw; //moves the box off screen by default
+    z-index:1000; //higher is taller on the pile
+    transition: all 0.5s; //if any properties change perform transition for .5s
+    display:flex; /* put mobile nav centered in middle */
+    // align-items: center; //going offscreen for some reason
+    justify-content: center;
+    &.active{
+        left:0;
+
+    }
+}

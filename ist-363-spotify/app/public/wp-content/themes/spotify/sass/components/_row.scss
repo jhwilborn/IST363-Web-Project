@@ -1,0 +1,12 @@
+.row {
+    // background-color: rgb(40, 73, 73);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -2rem 0 -2rem;
+    &.justify-content-space-between {
+        justify-content: space-between;
+    }
+    &.align-items-center{
+        align-items: center;
+    }
+}

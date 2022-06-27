@@ -1,0 +1,67 @@
+@use "../abstracts/mixins";
+.grid {
+	background-color: pink;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	// grid-auto-columns: 100px;
+	// grid-auto-flow: column;
+	// grid-template-rows:100px;//sizes how large each row will be. remaining rows decided by padding in each box
+	grid-auto-rows: 100px; //auto sizes the rows to a certain height
+
+	@include mixins.breakpoint(tablet) {
+		grid-template-columns: 1fr 1fr;
+	}
+	@include mixins.breakpoint(laptop) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	@include mixins.breakpoint(laptop) {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+	.item {
+		background-color: orange;
+		padding: 1rem;
+	}
+}
+.grid2 {
+	background-color: violet;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-flow: dense; //no empty spaces
+	overflow: hidden;
+	gap: 0.25em;
+	@include mixins.breakpoint(tablet) {
+		grid-template-columns: repeat(2, 1fr); //do 1fr 2 times
+	}
+	@include mixins.breakpoint(laptop) {
+		grid-template-columns: repeat(3, 1fr); //do 1fr 2 times
+	}
+	@include mixins.breakpoint(desktop) {
+		grid-template-columns: repeat(10, 1fr); //do 1fr 2 times
+	}
+	.album {
+		background-color: orange;
+		background-size: cover;
+		background-position: center center;
+	}
+	.album1 {
+		grid-column: span 3 / 6; //span slots 3 to 6
+		background-color: #f21e1e;
+		grid-row: span 3;
+	}
+	.album14 {
+		grid-column: span 3;
+		grid-row: span 3;
+		background-color: blue;
+	}
+	.album:nth-child(5n) {
+		background-color: yellow; //changes color every 5th element
+		grid-column: span 2;
+		grid-row: span 2;
+	}
+	.album:nth-child(8n) {
+		background-color: pink; //changes color every 5th element
+		grid-column: span 3;
+		grid-row: span 3;
+	}
+} //grid2end

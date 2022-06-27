@@ -1,0 +1,20 @@
+@use "../abstracts/vars";
+
+.nav {
+    ul {
+        display: flex;
+        color: white;
+        li {
+            padding: 1rem;
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 1.2rem;
+                font-size: vars.$font_primary;
+                &:hover {
+                    color: vars.$color_primary;
+                }
+            }
+        }
+    }
+}

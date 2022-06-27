@@ -1,0 +1,16 @@
+@use '../abstracts/vars';
+.btn-ui{
+    background-color: vars.$color_primary;
+    border:0;
+    padding:1rem;
+    border-radius: 15%;
+    img{
+        width:2rem;
+        height:2rem;
+    }
+    &.closeMenuBtn{
+        position:absolute;
+        top:1rem;
+        right:1rem;
+    }
+}

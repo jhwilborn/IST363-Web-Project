@@ -1,0 +1,8 @@
+//partials in sass have to start with underscores
+@use '../abstracts/vars';
+header {
+    background-color: black;
+    h1{
+        margin:0;
+    }
+}

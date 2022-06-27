@@ -1,0 +1,60 @@
+@use "../sass/abstracts/mixins";
+$sizes: xs, sm, md, lg;
+$textAlignments: left, center, right;
+$flexDirectionValues: row, row-reverse, column, column-reverse;
+$justifyContentValues: flex-start, flex-end, center, space-between, space-around,
+	space-evenly;
+$alignItemsValues: flex-start, flex-end, center, stretch, baseline;
+
+.col {
+	// background-color: orange;
+	width: 100%;
+	padding: 1rem;
+	a {
+		color: black;
+		text-decoration: none;
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+	// padding-left: 1rem;
+	// padding-right: 1rem;
+	// &.col-6{ //append to end of .col
+	@each $size in $sizes {
+		//each expects an array
+		//make local variable in sizes as size
+		@include mixins.breakpoint($size) {
+			@for $i from 1 through 12 {
+				//expects a number range
+				&.col-#{$size}-#{$i} {
+					width: calc(100% * ($i/12));
+				}
+			}
+		}
+	}
+	@each $textAlignment in $textAlignments {
+		&.text-align-#{$textAlignment} {
+			text-align: $textAlignment;
+		}
+	}
+	@each $value in $flexDirectionValues {
+		&.flex-direction-#{$value} {
+			display: flex;
+			flex-direction: $value;
+		}
+	}
+	@each $value in $justifyContentValues {
+		&.justify-content-#{$value} {
+			display: flex;
+			justify-content: $value;
+		}
+	}
+	@each $value in $alignItemsValues {
+		&.align-items-#{$value} {
+			display: flex;
+			align-items: $value;
+		}
+	}
+	@include mixins.marginBottom();
+}

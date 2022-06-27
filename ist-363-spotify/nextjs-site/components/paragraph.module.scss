@@ -1,0 +1,22 @@
+@use '../sass/abstracts/mixins.scss';
+.paragraph {
+	font-size: 1rem;
+	color: black;
+	@include mixins.marginBottom();
+	a {
+		color: black;
+		text-decoration: none;
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	&.intro{
+		font-size: 2rem;
+		font-weight: bold;
+	}
+	&.pushIn{
+		padding-left:1rem;
+	}
+}

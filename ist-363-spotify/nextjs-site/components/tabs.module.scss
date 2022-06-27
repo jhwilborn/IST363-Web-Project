@@ -1,0 +1,18 @@
+.tabs{
+	display:flex;
+	margin:0;
+	padding:0;
+	list-style: none;
+	border-bottom: 1px solid black;
+	.tabItem{
+		padding:1rem;
+		color: gray;
+		font-family: Arial;
+		font-weight:bold;
+		text-transform:uppercase;
+		&.active{
+			color: black;
+			border-bottom: 3px solid green;
+		}
+	}
+}
